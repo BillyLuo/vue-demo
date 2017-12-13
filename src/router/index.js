@@ -3,6 +3,7 @@ import Router from 'vue-router'
 const Login = () => import('@/components/Login');
 const Register = () =>  import('@/components/register/Register');
 const Home = () => import('@/components/home/Home');
+const Body = () => import ('@/components/home/children/Body');
 Vue.use(Router)
 
 export default new Router({
@@ -24,7 +25,10 @@ export default new Router({
     {
       path:'/home',
       name:'Home',
-      component:Home
+      component:Home,
+      children:[
+        {path:'body',name:'Body',component:Body}
+      ]
     }
   ]
 })

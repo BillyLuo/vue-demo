@@ -49,7 +49,9 @@ export default {
         let that = this;
         // console.dir(this.$http)
         setTimeout(() => {
-          that.$router.push({name:'Home',params:{a:'3',b:'4'}})
+          sessionStorage.removeItem('user');
+          sessionStorage.setItem('user',JSON.stringify({username}))
+          that.$router.push({path:'/home',query:{a:'3',b:'4'}})
         }, 200);
       }else {
         Message.error('wrong usernmae or password');

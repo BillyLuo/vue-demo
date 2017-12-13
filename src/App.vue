@@ -6,8 +6,14 @@
 
 <script>
 import 'normalize.css/normalize.css';
+import 'animate.css/animate.css';
 export default {
-  name: 'app'
+  name: 'app',
+  watch:{
+    $route(to,from){
+      // console.log('to',to);
+    }
+  }
 }
 </script>
 
